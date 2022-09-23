@@ -1,9 +1,9 @@
 :root {
-  --main-background-color: #ffffff;
   --section-background-color: #2f303a;
   --hero-background-color: #c4c4c4;
   --list-background-color: #f5f4fa;
   --footer-socials-background: rgba(255, 255, 255, 0.1);
+  --activity-thumb-background: rgba(47, 48, 58, 0.8);
 
   --title-color: #212121;
   --desc-color: #757575;
@@ -30,7 +30,7 @@
 }
 
 body {
-  background-color: var(--main-background-color);
+  background-color: var(--white-color);
   color: var(--title-color);
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -142,7 +142,6 @@ p {
   border-radius: 2px;
 }
 
-
 .header-contacts {
   display: flex;
   margin-left: auto;
@@ -229,6 +228,28 @@ a.contacts:focus {
   cursor: pointer;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  letter-spacing: 0;
+
+  width: 100%;
+  height: 100%;
+  /* background-color: var(--white-color); */
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+
+  background-color: var(--white-color);
+}
+
 .button:hover,
 .button:focus {
   background-color: var(--activ-btn-color);
@@ -274,14 +295,16 @@ a.contacts:focus {
   background: var(--list-background-color);
 }
 
-.benefits-title {
-  margin-top: 0;
-  margin-bottom: 10px;
-
+.title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+
+.benefits-title {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .benefits-desc {
@@ -314,6 +337,25 @@ a.contacts:focus {
   flex-basis: calc((100% - 60px) / 3);
 }
 
+.activity-thumb {
+  position: relative;
+}
+
+.thumb-title {  
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+
+  margin: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  text-align: center;
+color: var(--white-color);
+background-color: var(--activity-thumb-background);
+
+}
+
 /* Team section */
 
 .section {
@@ -335,7 +377,7 @@ a.contacts:focus {
 }
 
 .team-item {
-  background-color: var(--main-background-color);
+  background-color: var(--white-color);
   box-shadow: var(--shadow-img);
   border-radius: 0px 0px 4px 4px;
 }
