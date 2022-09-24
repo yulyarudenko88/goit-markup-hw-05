@@ -538,6 +538,7 @@ address {
 /* Backdrop&Modal */
 
 .backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
