@@ -26,10 +26,12 @@
   --shadow-btn: rgba(0, 0, 0, 0.15);
   --shadow-filter-btn: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  --shadow-projects-item: rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  --shadow-projects-item: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   --shadow-modal: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  /* --shadow-button-modal: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2); */
 
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -118,6 +120,8 @@ p {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--time-function);
 }
 
 .nav-link:hover,
@@ -163,11 +167,17 @@ p {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--time-function);
 }
 
 .header-contacts .contacts .icon {
   margin-right: 10px;
   fill: var(--desc-color);
+}
+
+a.contacts:hover .icon {
+  transition: fill 250ms var(--time-function);
 }
 
 a.contacts:hover .icon {
@@ -231,12 +241,13 @@ a.contacts:focus {
   line-height: 1.88;
   letter-spacing: 0.06em;
   cursor: pointer;
+
+  transition: background-color 250ms var(--time-function);
 }
 
 .button:hover,
 .button:focus {
   background-color: var(--activ-btn-color);
-  color: var(--white-color);
 }
 
 /* Benefits section */
@@ -397,14 +408,17 @@ a.contacts:focus {
   align-items: center;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
 
   fill: var(--social-icon-color);
+
+  transition: background-color 250ms var(--time-function),
+    fill 250ms var(--time-function);
 }
 
 .team-social .list-icon:hover,
 .team-social .list-icon:focus {
-  background: var(--accent-color);
-  border-radius: 50%;
+  background-color: var(--accent-color);
 
   fill: var(--white-color);
 }
@@ -428,6 +442,8 @@ a.contacts:focus {
   border-radius: 4px;
 
   fill: var(--social-icon-color);
+
+  transition: fill 250ms var(--time-function), border 250ms var(--time-function);
 }
 
 .clients-list .client-icon:hover,
@@ -480,6 +496,7 @@ address {
 
 .footer-contacts .contacts {
   color: var(--secondary-white-color);
+  transition: color 250ms var(--time-function);
 }
 
 .item-socials .socials-list {
@@ -497,6 +514,8 @@ address {
   background: var(--footer-socials-background);
   border-radius: 50%;
   fill: var(--white-color);
+
+  transition: background 250ms var(--time-function);
 }
 
 .socials-list .list-icon:hover,
@@ -520,6 +539,7 @@ address {
 
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -537,7 +557,7 @@ address {
 }
 
 .backdrop.is-hidden .modal {
-transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .modal {
@@ -559,6 +579,7 @@ transform: translate(-50%, -50%) scale(0.8);
   position: absolute;
   top: 8px;
   right: 8px;
+  transition: fill 250ms var(--time-function);
 
   display: inline-block;
   padding: 6px;
@@ -567,6 +588,11 @@ transform: translate(-50%, -50%) scale(0.8);
   background: var(--white-color);
   border: 1px solid var(--border-close-button);
   cursor: pointer;
+}
+
+.modal .button:hover,
+.modal .button:focus {
+  fill: var(--accent-color);
 }
 
 .button .icon {
@@ -598,6 +624,9 @@ transform: translate(-50%, -50%) scale(0.8);
   font-size: 16px;
   line-height: 1.63;
   cursor: pointer;
+
+  transition: background-color 250ms var(--time-function),
+    color 250ms var(--time-function), box-shadow 250ms var(--time-function);
 }
 
 .filter .first {
@@ -643,11 +672,12 @@ transform: translate(-50%, -50%) scale(0.8);
 } */
 .projects-item .link {
   display: block;
+  transition: box-shadow 250ms var(--time-function);
 }
 
 .projects-item .link:hover,
 .projects-item .link:focus {
-  box-shadow: 0px 1px 1px var(--shadow-projects-item);
+  box-shadow: var(--shadow-projects-item);
 }
 
 .project-thumb {
