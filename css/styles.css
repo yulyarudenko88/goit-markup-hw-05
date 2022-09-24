@@ -575,14 +575,17 @@ address {
   box-shadow: var(--shadow-modal);
 }
 
-.modal .button {
+.modal .modal-button {
   position: absolute;
   top: 8px;
   right: 8px;
   transition: fill 250ms var(--time-function);
 
-  display: inline-block;
-  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 
   background: var(--white-color);
@@ -590,8 +593,8 @@ address {
   cursor: pointer;
 }
 
-.modal .button:hover,
-.modal .button:focus {
+.modal .modal-button:hover,
+.modal .modal-button:focus {
   fill: var(--accent-color);
 }
 
