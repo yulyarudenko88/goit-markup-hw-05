@@ -140,7 +140,7 @@ p {
 .current::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 
   display: inline-block;
@@ -173,15 +173,12 @@ p {
 
 .header-contacts .contacts .icon {
   margin-right: 10px;
-  fill: var(--desc-color);
-}
-
-a.contacts:hover .icon {
+  fill: currentColor;
   transition: fill 250ms var(--time-function);
 }
 
 a.contacts:hover .icon {
-  fill: var(--accent-color);
+  fill: currentColor;
 }
 
 a.contacts:hover,
@@ -193,7 +190,6 @@ a.contacts:focus {
 
 .hero {
   max-width: 1600px;
-  min-height: 600px;
   padding: 200px 0;
   margin-right: auto;
   margin-left: auto;
@@ -205,6 +201,7 @@ a.contacts:focus {
     url("../images/hero-banner.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 
   background-color: var(--hero-background-color);
   text-align: center;
@@ -538,7 +535,7 @@ address {
 /* Backdrop&Modal */
 
 .backdrop.is-hidden {
-  visibility: hidden;
+  /* visibility: hidden; */
   opacity: 0;
   pointer-events: none;
 }
@@ -549,14 +546,14 @@ address {
   left: 0;
 
   opacity: 1;
-  transition: opacity 250ms var(--time-function);
+  transition: opacity 250ms var(--time-function) 250ms;
 
   width: 100%;
   height: 100%;
   background-color: var(--backdrop);
 }
 
-.backdrop.is-hidden .modal {
+.backdrop.is-hidden.modal {
   transform: translate(-50%, -50%) scale(0.85);
 }
 
@@ -696,7 +693,6 @@ address {
   transition: transform 250ms var(--time-function);
 
   padding: 63px 24px;
-  width: 100%;
   height: 100%;
 
   font-size: 18px;
